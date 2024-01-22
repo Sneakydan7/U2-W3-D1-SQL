@@ -19,10 +19,26 @@ public class Main {
 
         // select extract(year from invoice_date) as years, count(*) as invoice_number from invoices where vat = 20 group by extract(year from invoice_date) order by years ; ES 7
 
-        // select extract(year from invoice_date ) as years, count(*) as counter, sum(amount) as invoice_sum from invoices group by extract(year from invoice_date) order by years; ES 8 
+        // select extract(year from invoice_date ) as years, count(*) as counter, sum(amount) as invoice_sum from invoices group by extract(year from invoice_date) order by years; ES 8
+
+        /*
+        * select extract(year from invoice_date) as years ,
+          count(*) as counter_of_invoices from invoices
+          where type = 'Service'
+          group by extract(year from invoice_date)
+          having count(*) > 2
+          order by years - ES 9
+        */
+
+        /* select clienti.region_of_residence as residency,
+           sum(invoices.amount) as total
+           from invoices
+           join clienti on clienti.client_number = invoices.client_id
+           group by clienti.region_of_residence -ES 10
+
+         */
 
 
-
-        }
     }
+}
 }
