@@ -39,5 +39,14 @@ public class Main {
          */
 
 
+        /*
+        select count(distinct clienti.client_number) as number_of_clients
+        from clienti
+        join invoices on invoices.client_id = clienti.client_number
+        where extract(year from date_of_birth ) = 1980
+        and invoices.amount > '50' ; -ES 11
+         */
+
+
     }
 }
